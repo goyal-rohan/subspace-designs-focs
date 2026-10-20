@@ -1,0 +1,104 @@
+{% macro schedule() -%}
+<table class="schedule">
+  <caption>{{ schedule_caption }}</caption>
+  <thead>
+    <tr><th scope="col">Time &amp; topic</th><th scope="col">Speaker</th></tr>
+  </thead>
+  {% for session in program %}
+  <tbody>
+    {% if session.get('break') %}
+    <tr class="break">
+      <th class="session" scope="row" colspan="2">{{ session.title }} <span>{{ session.time }}</span></th>
+    </tr>
+    {% else %}
+    <tr>
+      <th class="session" scope="rowgroup" colspan="2"><strong>{{ session.title }}</strong> <span>{{ session.time }}</span></th>
+    </tr>
+    {% for talk in session.talks %}
+    <tr>
+      <td><span class="talk-time">{{ talk.time }}</span>{{ talk.title }}</td>
+      <td{% if not talk.get('url') %} class="secondary"{% endif %}>
+        {% if talk.get('url') %}<a href="{{ talk.url }}"{% if talk.get('speaker_label') %} aria-label="{{ talk.speaker_label }}"{% endif %}>{{ talk.speaker }}</a>{% else %}{{ talk.speaker }}{% endif %}
+        {% if talk.get('affiliation') %} <span class="affiliation">({{ talk.affiliation }})</span>{% endif %}
+        {% if talk.get('speaker_note') %} <span class="secondary">{{ talk.speaker_note }}</span>{% endif %}
+      </td>
+    </tr>
+    {% if talk.get('abstract') and talk.abstract.strip() %}
+    <tr class="abstract-row">
+      <td colspan="2">
+        <details class="abstract" id="abstract-{{ talk.id }}">
+          <summary aria-label="Abstract for {{ talk.title }}">Abstract</summary>
+          <div class="abstract-body">{{ talk.abstract | markdown }}</div>
+        </details>
+      </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </tbody>
+  {% endfor %}
+</table>
+{%- endmacro %}
+
+{% macro organizer_list() -%}
+<ul class="organizers">
+  {% for organizer in organizers %}
+  <li>
+    <a class="name" href="{{ organizer.url }}">{{ organizer.name }}</a>
+    <span>{% for affiliation in organizer.affiliations %}{{ affiliation }}{% if not loop.last %}<br>{% endif %}{% endfor %}</span>
+    <a href="mailto:{{ organizer.email }}">{{ organizer.email }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{%- endmacro %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ description }}">
+    <meta name="theme-color" content="#ffffff">
+    <title>{{ page_title }}</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23223f75'/%3E%3Cpath d='M7 8h18M7 16h18M7 24h18M10 5v22M22 5v22' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page" id="top">
+      <header class="site-header">
+        <p class="eyebrow"><a href="{{ conference_url }}">{{ conference }}</a> · Workshop</p>
+        <h1>{{ title }}<br><span>{{ subtitle }}</span></h1>
+        <dl class="event-details">
+          <div>
+            <dt>Date</dt>
+            <dd><time datetime="{{ date }}">{{ date_label }}</time></dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>{{ location }}<br>{{ address }}</dd>
+          </div>
+          <div>
+            <dt>Time</dt>
+            <dd>{{ time }}<br><span class="secondary">{{ timezone_note }}</span></dd>
+          </div>
+          <div>
+            <dt>Attend</dt>
+            <dd><a href="{{ registration_url }}">Conference registration</a><br><a href="{{ venue_url }}">Venue and travel information</a></dd>
+          </div>
+        </dl>
+        <nav aria-label="Page sections">
+          <a href="#overview">Overview</a>
+          <a href="#program">Program</a>
+          <a href="#organizers">Organizers</a>
+        </nav>
+      </header>
+      <main id="main">
+        {{ content | replace('<!-- schedule -->', schedule()) | replace('<!-- organizers -->', organizer_list()) | safe }}
+      </main>
+      <footer>
+        <span>{{ footer }}</span>
+        <a href="#top">Back to top</a>
+      </footer>
+    </div>
+  </body>
+</html>

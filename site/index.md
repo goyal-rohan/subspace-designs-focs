@@ -1,0 +1,153 @@
+---
+# Page metadata and event details. Keep quoted text quoted, especially titles with colons.
+page_title: "Subspace Designs · FOCS 2026 Workshop"
+description: "Subspace Designs: A Universal Tool for Derandomization. A FOCS 2026 workshop on November 8 at NYU, New York City."
+title: "Subspace Designs:"
+subtitle: "A Universal Tool for Derandomization"
+conference: "FOCS 2026"
+conference_url: "https://focs.computer.org/2026/"
+date: "2026-11-08"
+date_label: "Sunday, November 8, 2026"
+location: "Warren Weaver Hall, Room 109"
+address: "NYU · 251 Mercer Street, New York City"
+time: "9:00–11:30 a.m. & 12:30–3:00 p.m."
+timezone_note: "All times are New York local time (EST)."
+registration_url: "https://focs.computer.org/2026/registration-2/"
+venue_url: "https://focs.computer.org/2026/venue/"
+schedule_caption: "Sunday, November 8, 2026 · All times EST"
+footer: "Subspace Designs · FOCS 2026"
+
+# Add or edit talks here. A nonempty abstract automatically gets an Abstract control.
+# For multiple paragraphs, use `abstract: |` followed by indented Markdown paragraphs.
+program:
+  - title: "Morning session"
+    time: "9:00–11:30 a.m."
+    talks:
+      - id: tutorial
+        time: "9:00–10:00 a.m."
+        title: "Subspace Designs and Local Linear Properties: A Tutorial"
+        speaker: "Venkat Guruswami"
+        affiliation: "UC Berkeley; Simons Institute"
+        url: "https://people.eecs.berkeley.edu/~venkatg/"
+        abstract: ""
+      - id: constructions
+        time: "10:00–10:30 a.m."
+        title: "Explicit Constructions of Subspace Designs"
+        speaker: "Jun-Ting (Tim) Hsieh"
+        affiliation: "MIT"
+        url: "https://jthsieh.github.io/"
+        abstract: ""
+      - id: lms
+        time: "10:30–11:00 a.m."
+        title: "The LMS Framework: Equivalences Between Subspace Designs and Random Codes"
+        speaker: "Jonathan Mosheiff"
+        affiliation: "Ben-Gurion University"
+        url: "https://mosheiff.carrd.co/"
+        abstract: ""
+      - id: matching
+        time: "11:00–11:30 a.m."
+        title: "Bipartite Matching in NC via Subspace Designs"
+        speaker: "Roshan Raj"
+        affiliation: "Ohio State University"
+        url: "https://sites.google.com/view/roshan-raj"
+        abstract: ""
+  - title: "Lunch"
+    time: "11:30 a.m.–12:30 p.m."
+    break: true
+  - title: "Afternoon session"
+    time: "12:30–3:00 p.m."
+    talks:
+      - id: list-decoding
+        time: "12:30–1:00 p.m."
+        title: "Optimal List Decoding via Subspace Designs"
+        speaker: "Rohan Goyal"
+        affiliation: "MIT"
+        url: "https://goyal-rohan.github.io/"
+        abstract: ""
+      - id: proximity-gaps
+        time: "1:00–1:30 p.m."
+        title: "Subspace Designs and Proximity Gaps"
+        speaker: "Kimi Sun"
+        affiliation: "Stanford University"
+        url: "https://scholar.google.com/citations?hl=en&user=ZMNZ7x8AAAAJ"
+        speaker_label: "Kimi Sun on Google Scholar"
+        abstract: ""
+      - id: list-recovery
+        time: "1:30–2:00 p.m."
+        title: "Discrete Brascamp–Lieb Inequalities and List Recovery"
+        speaker: "Joshua Brakensiek"
+        affiliation: "UC Berkeley"
+        url: "https://jbrakensiek.github.io/"
+        abstract: ""
+      - id: pseudorandomness
+        time: "2:00–2:30 p.m."
+        title: "Linear-Algebraic Pseudorandomness"
+        speaker: "Dean Doron"
+        affiliation: "Ben-Gurion University"
+        url: "https://deandoron.github.io/"
+        abstract: ""
+      - id: open-problems
+        time: "2:30–3:00 p.m."
+        title: "Open Problems and Future Directions"
+        speaker: "The organizers"
+        url: "#organizers"
+        speaker_note: "(moderators)"
+
+organizers:
+  - name: "Joshua Brakensiek"
+    url: "https://jbrakensiek.github.io/"
+    affiliations:
+      - "University of California, Berkeley"
+    email: "josh.brakensiek@berkeley.edu"
+  - name: "Rohan Goyal"
+    url: "https://goyal-rohan.github.io/"
+    affiliations:
+      - "Massachusetts Institute of Technology"
+    email: "rohan_g@mit.edu"
+  - name: "Venkatesan Guruswami"
+    url: "https://people.eecs.berkeley.edu/~venkatg/"
+    affiliations:
+      - "University of California, Berkeley"
+      - "Simons Institute for the Theory of Computing"
+    email: "venkatg@berkeley.edu"
+---
+
+<section id="overview" aria-labelledby="overview-title" markdown="1">
+
+## Overview {#overview-title}
+
+Subspace designs are linear-algebraic objects that turn properties of random error-correcting codes into explicit constructions. Originally introduced for list decoding, they now connect coding theory, pseudorandomness, and combinatorial optimization, with applications ranging from dimension expanders to parallel algorithms for bipartite matching.
+
+This workshop aims to introduce subspace designs to the broader theoretical computer science community and bring participants to the research frontier. We will explore their foundations and constructions, the local coordinate-wise linear (LCL) framework of Levi, Mosheiff, and Shagrithaya (LMS), and recent applications, with time for open problems and discussion.
+
+Planned themes include:
+
+- **Foundations and constructions:** intuition for weak and strong subspace designs, and explicit constructions.
+- **A common framework:** local linear properties and connections between subspace designs and random codes.
+- **Applications:** list decoding and list recovery, proximity gaps, linear-algebraic pseudorandomness, and bipartite matching.
+- **Open problems:** directions for future research across these areas.
+
+The morning is intended for a broad TCS audience; the afternoon will explore applications in greater depth.
+
+</section>
+
+<section id="program" aria-labelledby="program-title" markdown="1">
+
+## Program {#program-title}
+
+The schedule and talk titles below are tentative. Abstracts and the remaining speakers will be added as they are confirmed.
+
+<!-- schedule -->
+
+Both sessions take place in Warren Weaver Hall, Room 109. See the [FOCS workshop program](https://focs.computer.org/2026/workshop-program/) for the full day’s schedule.
+{: .program-note}
+
+</section>
+
+<section id="organizers" aria-labelledby="organizers-title" markdown="1">
+
+## Organizers {#organizers-title}
+
+<!-- organizers -->
+
+</section>
