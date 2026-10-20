@@ -93,7 +93,7 @@
         </nav>
       </header>
       <main id="main">
-        {{ content | replace('<!-- schedule -->', schedule()) | replace('<!-- organizers -->', organizer_list()) | safe }}
+        {{ content | replace('<!-- schedule -->' | safe, schedule()) | replace('<!-- organizers -->' | safe, organizer_list()) | safe }}
       </main>
       <footer>
         <span>{{ footer }}</span>

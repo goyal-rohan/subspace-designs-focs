@@ -17,6 +17,10 @@ OUTPUT = ROOT / "dist"
 # Deliberately enumerate public assets. Never copy the repository or proposals.
 PUBLIC_FILES = ("styles.css",)
 SOURCE_FILES = ("index.md", "template.html") + PUBLIC_FILES
+REQUIRED_SECTIONS = {
+    "<!-- schedule -->": '<table class="schedule">',
+    "<!-- organizers -->": '<ul class="organizers">',
+}
 
 
 def render_markdown(text):
@@ -30,6 +34,9 @@ def render_page(source):
     metadata = yaml.safe_load(parts[0][4:])
     if not isinstance(metadata, dict):
         raise ValueError("The YAML metadata in index.md must contain named fields.")
+    for marker in REQUIRED_SECTIONS:
+        if parts[1].count(marker) != 1:
+            raise ValueError(f"index.md must contain exactly one {marker} marker.")
     environment = Environment(
         loader=FileSystemLoader(SOURCE),
         autoescape=True,
@@ -39,9 +46,13 @@ def render_page(source):
         keep_trailing_newline=True,
     )
     environment.filters["markdown"] = render_markdown
-    return environment.get_template("template.html").render(
+    page = environment.get_template("template.html").render(
         **metadata, content=render_markdown(parts[1])
     ).lstrip()
+    for marker, section in REQUIRED_SECTIONS.items():
+        if marker in page or section not in page:
+            raise ValueError(f"Failed to render {marker}; refusing to publish an incomplete page.")
+    return page
 
 
 def build():
