@@ -18,7 +18,7 @@ schedule_caption: "Sunday, November 8, 2026 · All times EST"
 footer: "Subspace Designs · FOCS 2026"
 
 # Add or edit talks here. A nonempty abstract automatically gets an Abstract control.
-# For multiple paragraphs, use `abstract: |` followed by indented Markdown paragraphs.
+# For paragraphs or LaTeX, use `abstract: |` followed by indented Markdown paragraphs.
 program:
   - title: "Morning session"
     time: "9:00–11:30 a.m."
@@ -63,7 +63,8 @@ program:
         speaker: "Rohan Goyal"
         affiliation: "MIT"
         url: "https://goyal-rohan.github.io/"
-        abstract: ""
+        abstract: |
+          I will present Yeyuan Chen and Zihan Zhang's breakthrough results showing optimal list-decoding of folded Reed-Solomon and more generally subspace-design codes. I will connect their techniques to previous works in the area on optimal list-decoding of random linear and random Reed-Solomon codes due to Alrabiah, Guo, Guruswami, Li, and Zhang.
       - id: proximity-gaps
         time: "1:00–1:30 p.m."
         title: "Subspace Designs and Proximity Gaps"
@@ -78,7 +79,12 @@ program:
         speaker: "Joshua Brakensiek"
         affiliation: "UC Berkeley"
         url: "https://jbrakensiek.github.io/"
-        abstract: ""
+        abstract: |
+          In coding theory, the problem of list recovery asks one to find all codewords $c$ of a given code $C$ which such that at least $1 - \rho$ fraction of the symbols of $c$ lie in some predetermined set of $\ell$ symbols for each coordinate of the code. A key question is bounding the maximum possible list size $L$ of such codewords for the given code $C$.
+
+          In this talk, I will present novel combinatorial upper bounds on the list recoverability of various families of linear and folded linear codes, including random linear codes, random Reed–Solomon codes, explicit folded Reed–Solomon codes, and explicit univariate multiplicity codes. In the zero-error regime our upper bound matches known lower bounds. The primary technique is a novel application of a discrete entropic Brascamp–Lieb inequality to the problem of list recovery, allowing us to relate the local structure of each coordinate with the global structure of the recovered list.
+
+          Based on joint work with Yeyuan Chen, Manik Dhar, and Zihan Zhang
       - id: pseudorandomness
         time: "2:00–2:30 p.m."
         title: "Linear-Algebraic Pseudorandomness"

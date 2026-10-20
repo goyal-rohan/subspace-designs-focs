@@ -7,6 +7,8 @@ import shutil
 import markdown
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
+from latex2mathml.converter import convert as latex_to_mathml
+from markdown.inlinepatterns import InlineProcessor
 from markupsafe import Markup
 
 
@@ -23,8 +25,25 @@ REQUIRED_SECTIONS = {
 }
 
 
+class MathInlineProcessor(InlineProcessor):
+    def handleMatch(self, match, data):
+        display = "block" if match.group(1) == "$$" else "inline"
+        mathml = latex_to_mathml(match.group(2).strip(), display=display)
+        # Stash the result so Markdown cannot reinterpret TeX subscripts or escapes.
+        return self.md.htmlStash.store(mathml), match.start(0), match.end(0)
+
+
 def render_markdown(text):
-    return Markup(markdown.markdown(text, extensions=["extra", "sane_lists"]))
+    if any(ord(character) < 32 and character not in "\n\t" for character in text):
+        raise ValueError("Invalid control character in Markdown. Use abstract: | for LaTeX.")
+    renderer = markdown.Markdown(extensions=["extra", "sane_lists"])
+    # After inline code (190), but before Markdown backslash escapes (180).
+    renderer.inlinePatterns.register(
+        MathInlineProcessor(r"(?<!\\)([$]{1,2})(?![$])(.+?)(?<!\\)\1(?![$])", renderer),
+        "math",
+        185,
+    )
+    return Markup(renderer.convert(text))
 
 
 def render_page(source):
