@@ -20,6 +20,14 @@ a:hover { text-decoration-thickness: 2px; }
 a:focus-visible, summary:focus-visible { outline: 2px solid var(--link); outline-offset: 5px; }
 p { margin: 0 0 1rem; }
 
+/* Avoid oversized default math-font leading in Firefox. Keep the height
+   automatic so fractions and scripts still have room to render. */
+math {
+  font-family: "STIX Two Math", "Cambria Math", "STIXGeneral", "DejaVu Math TeX Gyre", "Times New Roman", serif;
+  font-size: 1em;
+  line-height: 1;
+}
+
 .page { max-width: 1104px; margin: 0 auto; padding: 48px 32px 28px; }
 .eyebrow { font-family: var(--sans); font-size: 0.88rem; color: var(--muted); margin-bottom: 0.65rem; }
 h1 { font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.13; font-weight: 500; letter-spacing: -0.025em; margin: 0 0 1.55rem; }
