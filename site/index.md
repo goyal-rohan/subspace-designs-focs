@@ -67,12 +67,17 @@ program:
           I will present Yeyuan Chen and Zihan Zhang's breakthrough results showing optimal list-decoding of folded Reed-Solomon and more generally subspace-design codes. I will connect their techniques to previous works in the area on optimal list-decoding of random linear and random Reed-Solomon codes due to Alrabiah, Guo, Guruswami, Li, and Zhang.
       - id: proximity-gaps
         time: "1:00–1:30 p.m."
-        title: "Subspace Designs and Proximity Gaps"
+        title: "A Local View of Proximity Gaps via Line Decoding"
         speaker: "Kimi Sun"
         affiliation: "Stanford University"
         url: "https://scholar.google.com/citations?hl=en&user=ZMNZ7x8AAAAJ"
         speaker_label: "Kimi Sun on Google Scholar"
-        abstract: ""
+        abstract: |
+          When many points on an affine line are close to a linear code, must the entire line be close to the code? Proximity gaps capture this local-to-global phenomenon and play an important role in interactive oracle proofs and their cryptographic applications.
+
+          In this talk, I will discuss how line decoding, a notion introduced by Goyal and Guruswami, connects proximity gaps to the framework of local properties and subspace designs. Rather than asking only whether each point has a nearby codeword, line decoding asks whether many of these codewords themselves lie on a line with the same parameterization. I will explain how to view line decoding as a local property and how to establish it via pruning arguments building on the work of Ashvinkumar, Habib, and Srivastava. Together, these ideas yield near-capacity proximity gaps for subspace-design codes and random codes.
+
+          Based on joint work with Rohan Goyal, Venkatesan Guruswami, and Mary Wootters.  
       - id: list-recovery
         time: "1:30–2:00 p.m."
         title: "Discrete Brascamp–Lieb Inequalities and List Recovery"
