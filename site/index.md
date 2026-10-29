@@ -29,7 +29,12 @@ program:
         speaker: "Venkat Guruswami"
         affiliation: "UC Berkeley; Simons Institute"
         url: "https://people.eecs.berkeley.edu/~venkatg/"
-        abstract: ""
+        abstract: |
+          A subspace design is a collection of large linear subspaces whose members, on average, have small intersection dimension with every low-dimensional subspace. Originally introduced as a tool for constructing list-decodable codes, subspace designs have emerged as a useful primitive in linear-algebraic pseudorandomness, and a unifying derandomization tool in coding theory. 
+        
+          Intriguingly, near-optimal subspace designs are themselves constructed from algebraic codes such as folded Reed–Solomon or univariate multiplicity codes. Recent work reveals a powerful reverse connection: the subspace-design property explains why these highly structured codes admit optimal list-size bounds for list decoding and proximity gaps approaching the optimal radius. More broadly, near-optimal subspace-design codes inherit, up to an arbitrarily small loss in rate, the guarantees of random linear codes for local coordinate-wise linear (LCL) properties—a general framework encompassing list decoding and list recovery. Recent work has shown that by capturing bipartite perfect matching as a LCL property, one can obtain a deterministic NC algorithm for bipartite perfect matching using subspace designs.
+
+          The talk will survey this circle of ideas. It will introduce the definitions, constructions, and connections pertaining to subspace designs, and set the stage for follow-up talks in the workshop on the various aspects mentioned above.
       - id: constructions
         time: "10:00–10:30 a.m."
         title: "Explicit Constructions of Subspace Designs"
