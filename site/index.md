@@ -25,7 +25,7 @@ program:
     talks:
       - id: tutorial
         time: "9:00–10:00 a.m."
-        title: "Subspace Designs and Local Linear Properties: A Tutorial"
+        title: "Subspace Designs and Applications: A Survey"
         speaker: "Venkat Guruswami"
         affiliation: "UC Berkeley; Simons Institute"
         url: "https://people.eecs.berkeley.edu/~venkatg/"
