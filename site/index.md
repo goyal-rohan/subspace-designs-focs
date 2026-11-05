@@ -44,11 +44,17 @@ program:
         abstract: ""
       - id: lms
         time: "10:30–11:00 a.m."
-        title: "The LMS Framework: Equivalences Between Subspace Designs and Random Codes"
+        title: "Local Properties, Thresholds and Guarantees"
         speaker: "Jonathan Mosheiff"
         affiliation: "Ben-Gurion University"
         url: "https://mosheiff.carrd.co/"
-        abstract: ""
+        abstract: |
+          A local property of a code is defined by a family of forbidden configurations, each involving only a bounded number of codewords. List decoding and list recovery are examples of such properties. For random linear codes, these properties exhibit threshold behavior as the rate increases. Characterizing these thresholds allows us to transfer the guarantees of random linear codes to structured and even explicit code families.
+
+          The talk will focus on the local coordinate-wise linear (LCL) property framework, developed jointly with Matan Levi and Nikhil Shagrithaya. I will introduce a potential function that balances the degrees of freedom in a local configuration against the constraints imposed by the code, and explain how applying it to the configuration and its projections characterizes the threshold for random linear codes over large alphabets. This characterization also identifies the local guarantees that subspace-design codes inherit from random linear codes.
+
+          I will also briefly discuss the reduction that transfers these guarantees to random Reed–Solomon codes, and a new universal framework for local properties developed jointly with Vinayak Kumar, Ray Li, and Gilad Shavit. The new framework unifies and extends previous threshold characterizations into a single theory for all monotone local properties over all finite fields, removing all structural assumptions on the properties and the divide between small and large alphabets.
+
       - id: matching
         time: "11:00–11:30 a.m."
         title: "Bipartite Matching in NC via Subspace Designs"
@@ -101,7 +107,10 @@ program:
         speaker: "Dean Doron"
         affiliation: "Ben-Gurion University"
         url: "https://deandoron.github.io/"
-        abstract: ""
+        abstract: |
+          Linear-algebraic pseudorandomness studies algebraic analogues of classical pseudorandom objects, replacing arbitrary test sets with linear subspaces. Beyond their intrinsic interest, these objects have found applications in coding theory, randomness extraction, PIT, and algorithms, making their explicit construction a worthwhile goal.
+
+          In this talk, I will talk about rank extractors, rank condensers, and dimension expanders. I will show their connection to subspace designs, and how these objects can be used to obtain other explicit constructions outside the linear-algebraic realm, and discuss, along the way, the parameters we would like them to achieve.
       - id: open-problems
         time: "2:30–3:00 p.m."
         title: "Open Problems and Future Directions"
