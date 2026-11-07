@@ -62,7 +62,10 @@ program:
         speaker: "Roshan Raj"
         affiliation: "Ohio State University"
         url: "https://sites.google.com/view/roshan-raj"
-        abstract: ""
+        abstract: |
+          We show that the bipartite matching problem is in NC. We extend the result to weighted bipartite matching and weighted linear matroid intersection. This in turn helps to show that the search versions of bipartite matching and linear matroid intersection are in NC as well. Additionally, we show that the computation of the noncommutative rank of a symbolic matrix is in NC.
+ 
+          In this talk, we will discuss an NC algorithm based on the explicit construction of subspace designs by Guruswami and Kopparty (Combinatorica 2016).
   - title: "Lunch"
     time: "11:30 a.m.–12:30 p.m."
     break: true
