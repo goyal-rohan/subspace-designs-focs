@@ -58,7 +58,7 @@ program:
 
       - id: matching
         time: "11:00–11:30 a.m."
-        title: "Bipartite Matching in NC via Subspace Designs"
+        title: "Bipartite Matching in NC"
         speaker: "Roshan Raj"
         affiliation: "Ohio State University"
         url: "https://sites.google.com/view/roshan-raj"
