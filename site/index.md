@@ -41,7 +41,8 @@ program:
         speaker: "Jun-Ting (Tim) Hsieh"
         affiliation: "MIT"
         url: "https://jthsieh.github.io/"
-        abstract: ""
+        abstract: |
+          This talk surveys two explicit constructions of subspace designs. The first is via folded Reed-Solomon codes, an algebraic construction where the subspace design property follows from the polynomial method. The second is a combinatorial construction based on the Alon-Edmonds-Luby (AEL) distance-amplification framework, where the final code inherits the subspace design property of the small inner code.
       - id: lms
         time: "10:30–11:00 a.m."
         title: "Local Properties, Thresholds and Guarantees"
