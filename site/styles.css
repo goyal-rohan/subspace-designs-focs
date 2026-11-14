@@ -54,7 +54,8 @@ th, td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--rule); vertical-a
 thead th { padding-top: 0.65rem; padding-bottom: 0.65rem; font-family: var(--sans); font-size: 0.88rem; background: #f4f5f7; border-top: 1px solid var(--rule); }
 tbody th { font-weight: 400; font-variant-numeric: tabular-nums; }
 .session span { display: inline-block; margin-left: 0.9rem; }
-.schedule td:last-child:not([colspan]) { width: 32%; }
+.schedule td:nth-child(2):not([colspan]) { width: 32%; }
+.schedule .slides { width: 1%; white-space: nowrap; }
 .talk-time { display: block; margin-bottom: 0.15rem; color: var(--muted); font-family: var(--sans); font-size: 0.84rem; font-variant-numeric: tabular-nums; }
 .break { color: var(--muted); }
 .program-note { color: var(--muted); font-size: 0.94rem; }
@@ -85,7 +86,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.
   .event-details > div { grid-template-columns: 5rem minmax(0, 1fr); gap: 0.65rem; }
   th, td { padding: 0.75rem 0.45rem; }
   .schedule { font-size: 0.94rem; }
-  .schedule td:last-child:not([colspan]) { width: 37%; }
+  .schedule td:nth-child(2):not([colspan]) { width: 37%; }
   .session span { display: block; margin-left: 0; }
 }
 

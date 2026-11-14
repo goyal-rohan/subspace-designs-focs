@@ -18,6 +18,9 @@ OUTPUT = ROOT / "dist"
 
 # Deliberately enumerate public assets. Never copy the repository or proposals.
 PUBLIC_FILES = ("styles.css",)
+PUBLIC_SLIDES = (
+    "Venkat.pdf", "Tim.pdf", "Roshan.pdf", "Rohan.pdf", "Kimi.pdf", "Josh.pdf", "Dean.pdf",
+)
 SOURCE_FILES = ("index.md", "template.html") + PUBLIC_FILES
 REQUIRED_SECTIONS = {
     "<!-- schedule -->": '<table class="schedule">',
@@ -80,6 +83,14 @@ def build():
         if not source.is_file() or source.is_symlink():
             raise SystemExit(f"Expected a regular public source file: {source}")
 
+    slides = ROOT / "files"
+    if slides.is_symlink():
+        raise SystemExit("Refusing to copy slides from a symlinked files directory.")
+    for name in PUBLIC_SLIDES:
+        source = slides / name
+        if not source.is_file() or source.is_symlink():
+            raise SystemExit(f"Expected a regular public slide file: {source}")
+
     # Render before replacing the last successful build, so editing errors preserve it.
     page = render_page((SOURCE / "index.md").read_text(encoding="utf-8"))
 
@@ -92,8 +103,12 @@ def build():
     (OUTPUT / "index.html").write_text(page, encoding="utf-8")
     for name in PUBLIC_FILES:
         shutil.copyfile(SOURCE / name, OUTPUT / name)
+    (OUTPUT / "files").mkdir()
+    for name in PUBLIC_SLIDES:
+        shutil.copyfile(slides / name, OUTPUT / "files" / name)
     (OUTPUT / ".nojekyll").touch()
-    print(f"Built index.md → index.html and {len(PUBLIC_FILES)} public asset(s) in {OUTPUT}")
+    print(f"Built index.md → index.html, {len(PUBLIC_FILES)} public asset(s), "
+          f"and {len(PUBLIC_SLIDES)} slide deck(s) in {OUTPUT}")
 
 
 if __name__ == "__main__":

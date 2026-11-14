@@ -2,17 +2,17 @@
 <table class="schedule">
   <caption>{{ schedule_caption }}</caption>
   <thead>
-    <tr><th scope="col">Time &amp; topic</th><th scope="col">Speaker</th></tr>
+    <tr><th scope="col">Time &amp; topic</th><th scope="col">Speaker</th><th scope="col">Slides</th></tr>
   </thead>
   {% for session in program %}
   <tbody>
     {% if session.get('break') %}
     <tr class="break">
-      <th class="session" scope="row" colspan="2">{{ session.title }} <span>{{ session.time }}</span></th>
+      <th class="session" scope="row" colspan="3">{{ session.title }} <span>{{ session.time }}</span></th>
     </tr>
     {% else %}
     <tr>
-      <th class="session" scope="rowgroup" colspan="2"><strong>{{ session.title }}</strong> <span>{{ session.time }}</span></th>
+      <th class="session" scope="rowgroup" colspan="3"><strong>{{ session.title }}</strong> <span>{{ session.time }}</span></th>
     </tr>
     {% for talk in session.talks %}
     <tr>
@@ -22,10 +22,13 @@
         {% if talk.get('affiliation') %} <span class="affiliation">({{ talk.affiliation }})</span>{% endif %}
         {% if talk.get('speaker_note') %} <span class="secondary">{{ talk.speaker_note }}</span>{% endif %}
       </td>
+      <td class="slides">
+        {% if talk.get('slides') %}<a href="{{ talk.slides }}" aria-label="Slides for {{ talk.title }} (PDF)">PDF</a>{% else %}<span class="secondary" aria-label="Not available">—</span>{% endif %}
+      </td>
     </tr>
     {% if talk.get('abstract') and talk.abstract.strip() %}
     <tr class="abstract-row">
-      <td colspan="2">
+      <td colspan="3">
         <details class="abstract" id="abstract-{{ talk.id }}">
           <summary aria-label="Abstract for {{ talk.title }}">Abstract</summary>
           <div class="abstract-body">{{ talk.abstract | markdown }}</div>

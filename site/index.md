@@ -29,6 +29,7 @@ program:
         speaker: "Venkat Guruswami"
         affiliation: "UC Berkeley; Simons Institute"
         url: "https://people.eecs.berkeley.edu/~venkatg/"
+        slides: "files/Venkat.pdf"
         abstract: |
           A subspace design is a collection of large linear subspaces whose members, on average, have small intersection dimension with every low-dimensional subspace. Originally introduced as a tool for constructing list-decodable codes, subspace designs have emerged as a useful primitive in linear-algebraic pseudorandomness, and a unifying derandomization tool in coding theory. 
         
@@ -41,6 +42,7 @@ program:
         speaker: "Jun-Ting (Tim) Hsieh"
         affiliation: "MIT"
         url: "https://jthsieh.github.io/"
+        slides: "files/Tim.pdf"
         abstract: |
           This talk surveys two explicit constructions of subspace designs. The first is via folded Reed-Solomon codes, an algebraic construction where the subspace design property follows from the polynomial method. The second is a combinatorial construction based on the Alon-Edmonds-Luby (AEL) distance-amplification framework, where the final code inherits the subspace design property of the small inner code.
       - id: lms
@@ -62,6 +64,7 @@ program:
         speaker: "Roshan Raj"
         affiliation: "Ohio State University"
         url: "https://sites.google.com/view/roshan-raj"
+        slides: "files/Roshan.pdf"
         abstract: |
           We show that the bipartite matching problem is in NC. We extend the result to weighted bipartite matching and weighted linear matroid intersection. This in turn helps to show that the search versions of bipartite matching and linear matroid intersection are in NC as well. Additionally, we show that the computation of the noncommutative rank of a symbolic matrix is in NC.
  
@@ -74,12 +77,13 @@ program:
     talks:
       - id: list-decoding
         time: "12:30–1:00 p.m."
-        title: "Optimal List Decoding via Subspace Designs"
+        title: "Three perspectives on optimal list-decoding"
         speaker: "Rohan Goyal"
         affiliation: "MIT"
         url: "https://goyal-rohan.github.io/"
+        slides: "files/Rohan.pdf"
         abstract: |
-          I will present Yeyuan Chen and Zihan Zhang's breakthrough results showing optimal list-decoding of folded Reed-Solomon and more generally subspace-design codes. I will connect their techniques to previous works in the area on optimal list-decoding of random linear and random Reed-Solomon codes due to Alrabiah, Guo, Guruswami, Li, and Zhang.
+          I will present three perspectives on optimal list decoding: Chen and Zhang’s constraint-counting partitions, Alrabiah–Guruswami–Li’s agreement hypergraphs and weak partition connectivity, and Levi–Mosheiff–Shagrithaya’s framework of local coordinate-wise linear properties and thresholds. I will explain how these approaches share the same underlying constraint-counting mechanism, connecting optimal average-radius list decoding of subspace-design codes with results for random linear and Reed–Solomon codes.
       - id: proximity-gaps
         time: "1:00–1:30 p.m."
         title: "A Local View of Proximity Gaps via Line Decoding"
@@ -87,6 +91,7 @@ program:
         affiliation: "Stanford University"
         url: "https://scholar.google.com/citations?hl=en&user=ZMNZ7x8AAAAJ"
         speaker_label: "Kimi Sun on Google Scholar"
+        slides: "files/Kimi.pdf"
         abstract: |
           When many points on an affine line are close to a linear code, must the entire line be close to the code? Proximity gaps capture this local-to-global phenomenon and play an important role in interactive oracle proofs and their cryptographic applications.
 
@@ -99,6 +104,7 @@ program:
         speaker: "Joshua Brakensiek"
         affiliation: "UC Berkeley"
         url: "https://jbrakensiek.github.io/"
+        slides: "files/Josh.pdf"
         abstract: |
           In coding theory, the problem of list recovery asks one to find all codewords $c$ of a given code $C$ which such that at least $1 - \rho$ fraction of the symbols of $c$ lie in some predetermined set of $\ell$ symbols for each coordinate of the code. A key question is bounding the maximum possible list size $L$ of such codewords for the given code $C$.
 
@@ -111,6 +117,7 @@ program:
         speaker: "Dean Doron"
         affiliation: "Ben-Gurion University"
         url: "https://deandoron.github.io/"
+        slides: "files/Dean.pdf"
         abstract: |
           Linear-algebraic pseudorandomness studies algebraic analogues of classical pseudorandom objects, replacing arbitrary test sets with linear subspaces. Beyond their intrinsic interest, these objects have found applications in coding theory, randomness extraction, PIT, and algorithms, making their explicit construction a worthwhile goal.
 
