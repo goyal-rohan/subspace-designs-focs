@@ -171,8 +171,6 @@ The morning is intended for a broad TCS audience; the afternoon will explore app
 
 ## Program {#program-title}
 
-The schedule and talk titles below are tentative. Abstracts and the remaining speakers will be added as they are confirmed.
-
 <!-- schedule -->
 
 Both sessions take place in Warren Weaver Hall, Room 109. See the [FOCS workshop program](https://focs.computer.org/2026/workshop-program/) for the full day’s schedule.
