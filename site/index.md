@@ -51,6 +51,7 @@ program:
         speaker: "Jonathan Mosheiff"
         affiliation: "Ben-Gurion University"
         url: "https://mosheiff.carrd.co/"
+        slides: "files/Jonathan.pdf"
         abstract: |
           A local property of a code is defined by a family of forbidden configurations, each involving only a bounded number of codewords. List decoding and list recovery are examples of such properties. For random linear codes, these properties exhibit threshold behavior as the rate increases. Characterizing these thresholds allows us to transfer the guarantees of random linear codes to structured and even explicit code families.
 

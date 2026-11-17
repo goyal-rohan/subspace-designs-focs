@@ -19,7 +19,7 @@ OUTPUT = ROOT / "dist"
 # Deliberately enumerate public assets. Never copy the repository or proposals.
 PUBLIC_FILES = ("styles.css",)
 PUBLIC_SLIDES = (
-    "Venkat.pdf", "Tim.pdf", "Roshan.pdf", "Rohan.pdf", "Kimi.pdf", "Josh.pdf", "Dean.pdf",
+    "Venkat.pdf", "Tim.pdf", "Jonathan.pdf", "Roshan.pdf", "Rohan.pdf", "Kimi.pdf", "Josh.pdf", "Dean.pdf",
 )
 SOURCE_FILES = ("index.md", "template.html") + PUBLIC_FILES
 REQUIRED_SECTIONS = {
